@@ -65,7 +65,7 @@ c. Conditional operator
 
 ======================================================================================================================================
 
-#############--------------------Unary operators in C/C++-------------------------------###############
+#############-------------------- Unary operators in C/C++ -------------------------------###############
 
 Unary operator: are operators that act upon a single operand to produce a new value.
 
@@ -125,7 +125,8 @@ int *ptr;
 ptr = &a; // address of a is copied to the location ptr. 
 
 6. sizeof(): 
-This operator returns the size of its operand, in bytes. The sizeof operator always precedes its operand.The operand is an expression, or it may be a cast.
+This operator returns the size of its operand, in bytes. The sizeof operator always precedes its operand.The operand is an expression, 
+or it may be a cast.
 
 
 #include <iostream>
@@ -140,5 +141,104 @@ int main()
 output:
 size of n: 4
 
-================================================================================================================
+==========================================================================================================================
+
+#############-------------------- Pre-increment or Pre-decrement in C++ -------------------------------###############
+
+In C++, pre-increment (or pre-decrement) can be used as l-value, 
+but post-increment (or post-decrement) can not be used as l-value.
+
+l-value:
+An lvalue (locator value) represents an object that occupies some identifiable location in memory (i.e. has an address).
+
+rvalues are defined by exclusion. Every expression is either an lvalue or an rvalue, so, an rvalue is an expression that
+does not represent an object occupying some identifiable location in memory.
+
+Notes: L-value: “l-value” refers to memory location which identifies an object. l-value may appear as either left hand
+  	   or right hand side of an assignment operator(=). l-value often represents as identifier.The
+
+for more details see https://www.geeksforgeeks.org/lvalue-and-rvalue-in-c-language/
+
+For example, following program prints a = 20 (++a is used as l-value)
+
+---------------- Pre-increment ---------------
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a = 10;
+  
+    ++a = 20; // works
+  
+    cout<< a;
+    return 0;
+}
+output:20
+
+---------------- Post-increment --------------
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a = 10;
+  
+    a++ = 20;  // error
+  
+    cout<< a;
+    return 0;
+}
+main.cpp:188:11: error: lvalue required as left operand of assignment
+   188 |     a++ = 20; 
+
+## How ++a is different from a++ as lvalue?
+
+It is because ++a returns an lvalue, which is basically a reference to the
+variable to which we can further assign — just like an ordinary variable. 
+It could also be assigned to a reference as follows:
+
+int &ref = ++a; // valid
+int &ref = a++; // invalid
+
+Whereas if you recall how a++ works, it doesn’t immediately increment the value
+it holds. For brevity, you can think of it as getting incremented in the next statement.
+So what basically happens is that a++ returns an rvalue, which is basically just a value 
+like the value of an expression which is not stored. You can think of a++ = 20; as follows 
+after being processed:   
+
+int a = 10;
+
+// On compilation, a++ is replaced by the value of a which is an rvalue:
+10 = 20; // Invalid
+
+// Value of a is incremented
+a = a + 1;
+That should help to understand why a++ = 20; won’t work.
+
+========================================================================================================================
+
+#######################-------------- new and delete operators in C++ for dynamic memory ---------------################
+
+Dynamic memory allocation in C/C++ refers to performing memory allocation manually by programmer. 
+Dynamically allocated memory is allocated on Heap and non-static and local variables get memory 
+allocated on Stack.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 */
