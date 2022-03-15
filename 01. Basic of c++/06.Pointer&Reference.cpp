@@ -266,6 +266,8 @@ E. To do system level programming where memory addresses are useful. For example
 
 
 
+
+
 Reference:https://www.geeksforgeeks.org/pointers-in-c-and-c-set-1-introduction-arithmetic-and-array/?ref=lbp
 
 */ 
