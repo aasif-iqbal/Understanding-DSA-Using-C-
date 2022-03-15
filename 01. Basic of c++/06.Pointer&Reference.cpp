@@ -262,12 +262,7 @@ E. To do system level programming where memory addresses are useful. For example
 
 
 
-
-
-
-
-
-
+//https://www.geeksforgeeks.org/pointers-vs-references-cpp/?ref=lbp
 Reference:https://www.geeksforgeeks.org/pointers-in-c-and-c-set-1-introduction-arithmetic-and-array/?ref=lbp
 
 */ 

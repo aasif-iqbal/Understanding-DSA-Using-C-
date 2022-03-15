@@ -69,7 +69,7 @@ int main()
 
 */
 
-/*  Pointer to Function */ 
+/*  ----------------- Pointer to Function ----------------- */ 
 void fun(int a)
 {
 	cout <<"Value of a:" << a <<endl;
@@ -96,4 +96,4 @@ int main()
 - If we remove bracket, then the expression “void (*fun_ptr)(int)” becomes “void *fun_ptr(int)” 
   which is declaration of a function that returns void pointer.
 */
-Reference:https://www.geeksforgeeks.org/function-pointer-in-c/
+//Reference:https://www.geeksforgeeks.org/function-pointer-in-c/
