@@ -62,6 +62,7 @@ int main()
     cout << ptr[0] << " " << ptr[1];
     return 0;
 }
+
 Warning: 
 In function 'int* fun()':
 6:8: warning: address of local variable 'arr' returned [-Wreturn-local-addr]
@@ -93,6 +94,7 @@ Following are some correct ways of returning array:
 	and we can delete it once we come out of function.
 
 # Using static array.
+
 #include <iostream>
 using namespace std;
  
