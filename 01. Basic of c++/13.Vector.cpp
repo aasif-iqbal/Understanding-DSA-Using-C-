@@ -17,35 +17,68 @@ Inserting and erasing at the beginning or in the middle is linear in time.
 
 using namespace std;
 
-void display(vector<int> &v1)
+void display(vector<int> &vec)
 {
-	for(int i = 0; i <v1.size(); i++)
+	for(int i=0; i < vec.size(); i++)
 	{
-		cout <<v1[i] << " ";
+		cout<<vec[i]<<" ";
 	}
-	cout <<endl;
+	cout<<endl;
 }
 
-int main() {
-
-	vector<int> vec1;
+int main()
+{
+	vector<int> v;
 	int element;
-	
-	// int length;
-	// cin>>length;
-	
-	// while(length--){
-	// 	cin>>element;
-	// 	vec1.push_back(element);
 
-	// }
-
-	cout<< "Enter the value in vector";
-	for(int i = 0; i < 5; i++)
+	for(int i=0; i < 5; i++)
 	{
-		cin >> element;
-		vec1.push_back(element);
+		cout<<"Enter element:";
+		cin>>element;
+		v.push_back(element);
 	}
-	display(vec1);
+	//delete
+	//cout<<"last element pop out(deleted)"<<endl;
+   // v.pop_back();
+    
+    //insert
+	vector<int>::iterator it;
+	it = v.begin();
+	it = v.insert(it, 300); //By default, it insert 300 at starting position.
+	
+	display(v);
 	return 0;
 }
+
+/*
+
+#------------------------------ Template ----------------------------
+template <class T>
+void display(vector<T> &vec)
+{
+    cout<<"display vector:"<<endl;
+	for(int i=0; i < vec.size(); i++)
+	{
+		cout<<vec[i]<<" ";
+	 
+	}
+	cout<<endl;
+}
+
+int main()
+{
+    //ways to create vector.
+	vector<int> v;      //zero length vector.
+	vector<char> v1(4); //4-element character vector. 
+	vector<char> v2(v1); //4-element character vector from v1.
+	
+	vector<double> v3(6, 3);     // 6 times 3 ie.3 3 3 3 3 3
+	
+	v1.push_back('hello');
+	display(v3);
+	return 0;
+}
+
+*/
+
+ 
